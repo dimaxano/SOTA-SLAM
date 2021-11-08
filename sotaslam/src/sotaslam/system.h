@@ -7,7 +7,6 @@ namespace sotaslam {
          *  initalizing and storing for high level access: fronted, backend, map info
          *  image feeding
          *  reset
-         * 
          */
 
     };

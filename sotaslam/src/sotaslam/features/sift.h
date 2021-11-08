@@ -1,7 +1,6 @@
 #include <iostream>
 #include <opencv2/features2d.hpp>
 
-#include "sotaslam/data/frame.h"
 #include "sotaslam/features/base.h"
 
 namespace sotaslam {

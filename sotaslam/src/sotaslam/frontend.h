@@ -1,5 +1,3 @@
-#include "features/extractor.h"
-
 #include <opencv2/core.hpp>
 
 namespace sotaslam {

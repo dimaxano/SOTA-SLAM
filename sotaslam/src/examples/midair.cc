@@ -11,7 +11,8 @@ int main(){
     prepare_midair(data_dir, images);
 
     // prepare SLAM system
-    sotaslam::frontend front = sotaslam::frontend();
+    auto bla = std::string("bla");
+    sotaslam::frontend front = sotaslam::frontend(bla);
 
     for(const std::string& im_path : images){
         cv::Mat img = cv::imread(im_path, cv::IMREAD_GRAYSCALE);
