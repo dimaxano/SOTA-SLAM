@@ -6,9 +6,7 @@ namespace features {
         // extractor_ = cv::SIFT::create(1600, 3);
     }
 
-    void sift::extract_from(const cv::Mat img){
-        std::vector<cv::KeyPoint> keypts = {};
-        cv::Mat descriptors = {};
+    void sift::extract_from(const cv::Mat img, std::vector<cv::KeyPoint>& keypts, cv::Mat& descriptors){
 
         std::cout << "sift::extract_from\n";
 

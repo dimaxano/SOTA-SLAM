@@ -1,23 +1,21 @@
 #include "sotaslam/frontend.h"
-// #include "sotaslam/data/frame.h"
+#include "sotaslam/data/frame.h"
 #include "sotaslam/features/base.h"
 
 namespace sotaslam {
     frontend::frontend(std::string& config) {
-        std::unique_ptr<features::base> feature_extractor = nullptr;
-        features::build_feature_extractor(feature_extractor, "sift");
-
-        // data::frame::set_extractor(extractor);
+        data::frame::initialize_extractor("sift"); // name of extractor should be taken from config
     }
 
     tracking_state_t frontend::process_frame(const cv::Mat img){
         
         // build frame representation.
         // Time heavy because of feature extraction inside
-        // data::frame frm(img);
+        data::frame frm(img);
 
         if(tracking_state_ == tracking_state_t::NOT_INITIALIZED){
-            // run initialization here
+            tracking_state_ = tracking_state_t::INITIALIZING;
+            return tracking_state_;
         }
 
         // store previous keypoints somewhere

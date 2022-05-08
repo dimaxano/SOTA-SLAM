@@ -4,10 +4,8 @@ add_library(${PROJECT_NAME} SHARED
             ${CMAKE_CURRENT_SOURCE_DIR}/frontend.h
             ${CMAKE_CURRENT_SOURCE_DIR}/system.h)
 
-message("${PROJECT_SOURCE_DIR}")
-
-# add_subdirectory(data)
 add_subdirectory(features)
+add_subdirectory(data)
 
 target_link_libraries(${PROJECT_NAME}
                         opencv_core

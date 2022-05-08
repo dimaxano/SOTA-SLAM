@@ -4,11 +4,12 @@
 
 namespace sotaslam {
 namespace features {
-    class base { // TODO: rename to feature_extractor_interface
+    class base {
     public:
-        virtual void extract_from(const cv::Mat img) = 0;
+        virtual void extract_from(const cv::Mat img, std::vector<cv::KeyPoint>& keypts, cv::Mat& descriptors) = 0;
     };
 
-    void build_feature_extractor(std::unique_ptr<base>& feature_extractor, const std::string& method);
+    std::unique_ptr<features::base> build_feature_extractor(const std::string& method);
+
 } // namespace features 
 } // namespace sotaslam

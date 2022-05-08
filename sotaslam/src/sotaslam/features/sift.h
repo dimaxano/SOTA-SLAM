@@ -9,13 +9,8 @@ namespace features {
     public:
         //! redefine default constructor to initialize internal state in the right way
         sift();
-        sift(sift&& obj) = default;
-        sift(const sift& obj) = default;
-        sift& operator=(sift&& obj) = default;
-        sift& operator=(const sift& obj) = default;
-        ~sift() = default;
 
-        void extract_from(const cv::Mat img) override;
+        void extract_from(const cv::Mat img, std::vector<cv::KeyPoint>& keypts, cv::Mat& descriptors) override;
     private:
         cv::Ptr<cv::SIFT> extractor_ = nullptr;
     };
